@@ -3,7 +3,7 @@
 MYSQL_URL=$1
 
 # use regex to parse the MySQL URL
-if [[ $MYSQL_URL =~ mysql://([^:]+)(:([^@]*))?@([^:]+):([0-9]+)/([a-zA-Z0-9_]+) ]]; then
+if [[ $MYSQL_URL =~ mysql://([^:]+)(:([^@]*))?@([^:]+):([0-9]+)/([a-zA-Z0-9_-]+) ]]; then
 	USERNAME="${BASH_REMATCH[1]}"
 	PASSWORD="${BASH_REMATCH[3]}" # This will be empty if the password is not provided
 	HOSTNAME="${BASH_REMATCH[4]}"
